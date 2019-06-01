@@ -14,9 +14,9 @@ from tg_bot import dispatcher, updater, TOKEN, WEBHOOK, OWNER_ID, DONATION_LINK,
     ALLOW_EXCL
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from tg_bot.modules import ALL_MODULES
-from tg_bot.modules.helper_funcs.chat_status import is_user_admin
-from tg_bot.modules.helper_funcs.misc import paginate_modules
+from sion_bot.modules import ALL_MODULES
+from sion_bot.modules.helper_funcs.chat_status import is_user_admin
+from sion_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
 Hi {}, my name is {}! If you have any questions on how to use me, read /help - and then head to @MarieSupport.
@@ -67,7 +67,7 @@ USER_SETTINGS = {}
 GDPR = []
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("tg_bot.modules." + module_name)
+    imported_module = importlib.import_module("sion_bot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
